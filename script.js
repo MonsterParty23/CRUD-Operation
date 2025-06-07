@@ -70,3 +70,24 @@ function resetForm() {
     document.getElementById("perPrice").value = '';
     selectedRow = null;
 }
+
+function updateHeaderDateTime(){
+    const dateElem = document.getElementById('date');
+    const timeElem = document.getElementById('time');
+    const now = new Date();
+
+    //Format date as YYYY-MM-DD
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    dateElem.textContent = now.toLocaleDateString(undefined, options);
+
+    //Format time as HH:MM:SS
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12; // Convert to 12-hour format
+    minutes = minutes < 10 ? '0' + minutes : minutes; // Add leading zero if needed
+    timeElem.textContent = `${hours}:${minutes} ${ampm}`;
+}   
+
+setInterval(updateHeaderDateTime, 1000); // Update every second
+updateHeaderDateTime(); // Initial call to set the time immediately
