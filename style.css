@@ -105,3 +105,67 @@ button{
 button:hover{
     background: #4b99d8;
 }
+
+/* Responsive Design */
+@media (max-width: 900px){
+    .header-bar{
+        font-size: 1.5rem;
+        height: auto;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    .header-bar .store-name,
+    #date,#time{
+        font-size: 1.2rem;
+        margin: 0;
+        text-align: center;
+    }
+}
+@media (max-width: 700px){
+    table{
+        width: 98%;
+        margin: 20px auto;
+        font-size: 1rem;
+    }
+    .header-bar{
+        font-size: 1.1rem;
+    }
+    .header-bar .store-name,
+    #date,#time{
+        font-size: 1rem;
+    }
+    input[type="text"],input[type="number"]{
+        width: 98%;
+        padding: 10px 8px;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 600px){
+    .header-bar{
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    table{
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        font-size: 0.95rem;
+    }
+    table.list, table.list thead, table.list tr, table.list th, table.list td{
+        display: block;
+        width: 100%;
+    }
+
+    .header-bar .store-name,
+    #date,#time{
+        font-size: 0.95rem;
+        margin: 0;
+        text-align: center;
+    }
+    .form_action--button{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}

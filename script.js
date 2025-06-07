@@ -91,3 +91,7 @@ function updateHeaderDateTime(){
 
 setInterval(updateHeaderDateTime, 1000); // Update every second
 updateHeaderDateTime(); // Initial call to set the time immediately
+
+document.querySelector('form').addEventListener('reset', function(e){
+    resetForm();
+});
